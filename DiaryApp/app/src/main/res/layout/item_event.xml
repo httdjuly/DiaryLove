@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_diary"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="Icon"
+        android:src="@drawable/logo_fb" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="133dp"
+            android:layout_height="25dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="69dp"
+            android:layout_toStartOf="@+id/tvDays"
+            android:fontFamily="@font/baloo_semibold"
+            android:gravity="center"
+            android:text="Birthday"
+            android:textColor="@color/colorOnBackground"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDays"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/baloo_bold"
+            android:gravity="center"
+
+            android:text="-365 Day"
+            android:textColor="@color/colorOnBackground"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

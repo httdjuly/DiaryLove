@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Feijoa -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌿 Nền Feijoa (#a9dd82) cùng chữ xanh Olive (#3E4E2C)"
+            android:background="#a9dd82"
+            android:textColor="#3E4E2C"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Tea Green -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🍃 Nền Tea Green (#c4e9ab) và chữ xanh lá đậm (#405A2B)"
+            android:background="#c4e9ab"
+            android:textColor="#405A2B"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Coconut Cream -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🥥 Nền Coconut Cream (#f8f6df) với chữ nâu sữa (#6C4A3F)"
+            android:background="#f8f6df"
+            android:textColor="#6C4A3F"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Pink -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌸 Nền Pink (#ffc4d4) đi kèm chữ hồng trầm (#8B3A5B)"
+            android:background="#ffc4d4"
+            android:textColor="#8B3A5B"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Carnation Pink -->
+        <!-- Carnation Pink -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💗 Nền Carnation Pink (#fda2bc) kết hợp chữ trắng (#FFFFFF)"
+            android:background="#fda2bc"
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+        <!-- Baby Blue -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💙 Nền Baby Blue (#AED7E0) kết hợp chữ xanh đậm (#2B4C57)"
+            android:background="#AED7E0"
+            android:textColor="#2B4C57"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Powder Blue -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌤️ Nền Powder Blue (#BFD7EA) kết hợp chữ xanh navy (#2D4A61)"
+            android:background="#BFD7EA"
+            android:textColor="#2D4A61"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Periwinkle -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔮 Nền Periwinkle (#C3DDF9) cùng chữ xanh tím đậm (#344B66)"
+            android:background="#C3DDF9"
+            android:textColor="#344B66"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+
+    </LinearLayout>
+</ScrollView>

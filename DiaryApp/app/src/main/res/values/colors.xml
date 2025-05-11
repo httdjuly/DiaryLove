@@ -1,0 +1,19 @@
+<resources>
+        <!-- Chủ đạo -->
+        <color name="colorPrimary">#F8BBD0</color> <!-- Hồng pastel -->
+        <color name="colorPrimaryVariant">#EC407A</color> <!-- Hồng đậm hiện đại -->
+
+        <!-- Phụ -->
+        <color name="colorSecondary">#AED581</color> <!-- Xanh pastel -->
+        <color name="colorAccent">#FF7043</color> <!-- Cam đỏ nhạt -->
+
+        <!-- Nền -->
+        <color name="colorSurface">#FFFFFF</color> <!-- Nền card -->
+        <color name="colorBackground">#FFFDE7</color> <!-- Nền chính -->
+
+        <!-- Text / icon -->
+        <color name="colorOnPrimary">#FFFFFF</color> <!-- Text trên nút hồng -->
+        <color name="colorOnSecondary">#4E342E</color> <!-- Text trên nền phụ -->
+        <color name="colorOnBackground">#4E342E</color> <!-- Text chung -->
+        <color name="colorOnSurface">#4E342E</color> <!-- Text trên card -->
+</resources>

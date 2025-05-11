@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:id="@+id/main"
+
+    android:background="@color/colorBackground"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:text="LOVE DAY"
+        android:textColor="@color/colorOnBackground"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <include
+        layout="@layout/card_days" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1">
+
+
+
+        <LinearLayout
+            android:id="@+id/containerItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="vertical">
+            <include layout="@layout/item_event" />
+            <include layout="@layout/item_event" />
+            <include layout="@layout/item_event" />
+            <include layout="@layout/item_event" />
+            <include layout="@layout/item_event" />
+            <include layout="@layout/item_event" />
+            <include layout="@layout/item_event" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <ImageButton
+        android:id="@+id/btnAdd"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bg_fab"
+        android:backgroundTint="@color/colorPrimaryVariant"
+        android:contentDescription="Thêm sự kiện"
+        android:src="@drawable/ic_add" />
+
+</LinearLayout>
