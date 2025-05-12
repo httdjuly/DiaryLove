@@ -43,7 +43,15 @@ dependencies {
     implementation(libs.annotation)
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.appcompat)
     testImplementation(libs.junit)
+    // Core
+    implementation(libs.androidx.recyclerview)
+    // Image loading
+    implementation(libs.glide)
+    annotationProcessor(libs.glide.compiler)
+
+
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

@@ -7,12 +7,7 @@
     android:orientation="horizontal"
     android:padding="15dp">
 
-    <ImageView
-        android:id="@+id/imgIcon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:contentDescription="Icon"
-        android:src="@drawable/logo_fb" />
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -32,7 +27,7 @@
             android:layout_marginEnd="69dp"
             android:layout_toStartOf="@+id/tvDays"
             android:fontFamily="@font/baloo_semibold"
-            android:gravity="center"
+            android:gravity="start"
             android:text="Birthday"
             android:textColor="@color/colorOnBackground"
             android:textSize="16sp" />
@@ -44,8 +39,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/baloo_bold"
-            android:gravity="center"
-
+            android:gravity="center_horizontal"
             android:text="-365 Day"
             android:textColor="@color/colorOnBackground"
             android:textSize="20sp" />
