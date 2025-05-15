@@ -61,8 +61,8 @@ public interface ApiService {
 
     @POST("/api/diary-notes")
     Call<Map<String, String>> createOrUpdateNote(@Body DiaryNote diaryNote);
-    @GET("/api/diary-notes/dates")
-    Call<List<DiaryNote>> getNotesByUser(@Query("userId") Long userId);
+    @GET("/api/diary-notes/all")
+    Call<List<DiaryNote>> getAllNotes(@Query("userId") Long userId);
 
 
 }

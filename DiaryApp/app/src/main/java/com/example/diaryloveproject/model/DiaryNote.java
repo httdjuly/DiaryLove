@@ -4,16 +4,26 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class DiaryNote {
-    public DiaryNote(Long userId, String title, String content, List<String> emojiUrls) {
-        this.userId = userId;
+    public DiaryNote(Long Id, String title, String content, List<String> emojiUrls) {
+        this.Id = Id;
         this.title = title;
         this.content = content;
         this.emojiUrls = emojiUrls;
     }
 
-    private Long userId;
+    private Long Id;
     private String title;
     private String content;
+    private List<String> emojiUrls;
+    private User user;
+
+    // Getter/Setter
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public LocalDateTime getTimestamp() {
         return timestamp;
@@ -24,14 +34,13 @@ public class DiaryNote {
     }
 
     private LocalDateTime timestamp;
-    private List<String> emojiUrls;
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return Id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long userId) {
+        this.Id = userId;
     }
 
     public String getTitle() {

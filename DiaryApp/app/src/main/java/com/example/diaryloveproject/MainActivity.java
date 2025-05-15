@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.diaryloveproject.fragment.DayCounterFragment;
+import com.example.diaryloveproject.fragment.DiaryNoteFragment;
 import com.example.diaryloveproject.fragment.HistoryFragment;
 import com.example.diaryloveproject.fragment.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.nav_daycounter) {
                 selectedFragment = new DayCounterFragment();
             } else if (item.getItemId() == R.id.nav_history) {
-                selectedFragment = new HistoryFragment();
+                selectedFragment = new DiaryNoteFragment();
             }   else if (item.getItemId() == R.id.nav_newsfeed) {
                 selectedFragment = new NewsfeedFragment();}
 

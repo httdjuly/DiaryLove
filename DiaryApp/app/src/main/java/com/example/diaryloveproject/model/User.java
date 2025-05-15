@@ -1,20 +1,23 @@
 package com.example.diaryloveproject.model;
 
 public class User {
-    private int id;
-
+    private long id;
     private String username;
     private String email;
 
-    public User(int id, String username, String email) {
+    public User(long id, String username, String email) {
         this.id = id;
         this.username = username;
         this.email = email;
     }
 
     // Getter và Setter
-    public int getId() {
+    public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -23,9 +26,5 @@ public class User {
 
     public String getEmail() {
         return email;
-    }
-
-    public void setId(long l) {
-
     }
 }

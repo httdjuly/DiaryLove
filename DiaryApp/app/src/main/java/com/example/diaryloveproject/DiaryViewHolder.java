@@ -42,16 +42,6 @@ public class DiaryViewHolder extends RecyclerView.ViewHolder {
                 listener.onDiaryClick(diary);
             }
         });
-
-
-        if (diary.getImageUrls() != null && !diary.getImageUrls().isEmpty()) {
-            rvImages.setVisibility(View.VISIBLE);
-            ImageAdapter imageAdapter = new ImageAdapter(diary.getImageUrls(), itemView.getContext());
-            rvImages.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.HORIZONTAL, false));
-            rvImages.setAdapter(imageAdapter);
-        } else {
-            rvImages.setVisibility(View.GONE);
-        }
     }
 
     private String formatDate(long timestamp) {
