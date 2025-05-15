@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.diaryloveproject.R;
+import com.example.diaryloveproject.SelectEmojiActivity;
 import com.example.diaryloveproject.activity.CreateNoteActivity;
 import com.example.diaryloveproject.adapter.DiaryAdapter;
 import com.example.diaryloveproject.model.Diary;
@@ -82,7 +83,7 @@ public class HistoryFragment extends Fragment {
         // Xử lý nút tạo bài viết
         ImageButton btnCreate = view.findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), CreateNoteActivity.class);
+            Intent intent = new Intent(requireContext(), SelectEmojiActivity.class);
             startActivity(intent);
         });
 

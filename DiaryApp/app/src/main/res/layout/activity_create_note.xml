@@ -27,7 +27,6 @@
             android:background="@android:color/transparent"
             app:tint="@color/colorOnBackground" />
 
-        <!-- View đệm ở giữa để đẩy button Save sang phải -->
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -37,7 +36,6 @@
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-
             android:background="@drawable/bg_button_primary"
             android:padding="0dp"
             android:text="Lưu"
@@ -45,14 +43,29 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Emoji Row - Sử dụng RecyclerView thay vì fixed ImageView -->
+    <!-- Thay RecyclerView bằng 2 ImageView cho emoji cảm xúc và thời tiết -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEmojis"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/ivFeelingEmoji"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Feeling Emoji" />
+
+        <ImageView
+            android:id="@+id/ivWeatherEmoji"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Weather Emoji" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/editTitle"

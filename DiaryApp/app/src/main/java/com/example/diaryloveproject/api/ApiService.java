@@ -15,6 +15,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiService {
     @FormUrlEncoded
@@ -54,6 +55,9 @@ public interface ApiService {
 
     @GET("/api/emojis")
     Call<List<Emoji>> getAllEmojis();
+
+    @GET("/api/emojis/category")
+    Call<List<Emoji>> getEmojisByCategory(@Query("category") String category);
 
     @POST("/api/diary-notes")
     Call<String> createOrUpdateNote(@Body DiaryNote diaryNote);

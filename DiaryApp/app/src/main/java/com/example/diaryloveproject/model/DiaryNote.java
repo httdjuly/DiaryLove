@@ -1,5 +1,6 @@
 package com.example.diaryloveproject.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class DiaryNote {
@@ -13,6 +14,16 @@ public class DiaryNote {
     private Long userId;
     private String title;
     private String content;
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    private LocalDateTime timestamp;
     private List<String> emojiUrls;
 
     public Long getUserId() {
@@ -46,5 +57,6 @@ public class DiaryNote {
     public void setEmojiUrls(List<String> emojiUrls) {
         this.emojiUrls = emojiUrls;
     }
+
 }
 
