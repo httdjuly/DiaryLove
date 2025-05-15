@@ -2,6 +2,7 @@ package com.example.diaryloveproject.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,11 +39,13 @@ public class CreateNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_diary);
 
-        // Nhận userId từ Intent
-        userId = getIntent().getLongExtra("userId", -1L);
-        if (userId == -1L) {
-            Toast.makeText(this, "Không tìm thấy thông tin user, vui lòng đăng nhập lại", Toast.LENGTH_SHORT).show();
-            finish();
+        // Lấy userId từ SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("login_pref", MODE_PRIVATE);
+        userId = sharedPreferences.getLong("userId", -1);
+
+        if (userId == -1) {
+            Toast.makeText(this, "Bạn chưa đăng nhập hoặc thông tin user không hợp lệ", Toast.LENGTH_SHORT).show();
+            finish(); // hoặc xử lý khác
             return;
         }
 
