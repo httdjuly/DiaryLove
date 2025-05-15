@@ -24,6 +24,7 @@ public class NewsfeedFragment extends Fragment {
     private RecyclerView recyclerView;
     private NewsfeedAdapter adapter;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
