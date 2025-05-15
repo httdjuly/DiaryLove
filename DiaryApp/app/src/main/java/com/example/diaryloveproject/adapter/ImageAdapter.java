@@ -1,5 +1,7 @@
 package com.example.diaryloveproject.adapter;
 
+import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +15,14 @@ import com.example.diaryloveproject.R;
 
 import java.util.List;
 
-// ImageAdapter.java
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
-    private List<String> imageUrls;
 
-    public ImageAdapter(List<String> imageUrls) {
+    private List<String> imageUrls;
+    private Context context;
+
+    public ImageAdapter(List<String> imageUrls, Context context) {
         this.imageUrls = imageUrls;
+        this.context = context;
     }
 
     @NonNull
@@ -32,7 +36,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String imageUrl = imageUrls.get(position);
-        Glide.with(holder.itemView.getContext())
+        Glide.with(context)
                 .load(imageUrl)
                 .into(holder.imageView);
     }

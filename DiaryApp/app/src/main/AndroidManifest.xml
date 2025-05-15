@@ -2,18 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/heart"
         android:label="Nhật ký"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/heart"
         android:supportsRtl="true"
         android:theme="@style/Theme.DiaryLoveProject"
         tools:targetApi="31">
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".ForgetOtp"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ForgetAcitivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- <activity -->
+        <!-- android:name=".HomeActivity" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".SelectWeatherActivity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".fragment.DayCounterFragment" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".CreateDiaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectEmojiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,22 +56,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Demo"
-            android:exported="false" />
-        <activity
-            android:name=".activity.DayCounterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".item_event"
-            android:exported="false" />
-        <activity
-            android:name=".Confirm_OTP"
+            android:name=".activity.OtpVerifyActivity"
             android:exported="false" />
         <activity
             android:name=".activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".MainActivity"
             android:exported="false" />
     </application>
 

@@ -46,7 +46,7 @@ public class DiaryViewHolder extends RecyclerView.ViewHolder {
 
         if (diary.getImageUrls() != null && !diary.getImageUrls().isEmpty()) {
             rvImages.setVisibility(View.VISIBLE);
-            ImageAdapter imageAdapter = new ImageAdapter(diary.getImageUrls());
+            ImageAdapter imageAdapter = new ImageAdapter(diary.getImageUrls(), itemView.getContext());
             rvImages.setLayoutManager(new LinearLayoutManager(itemView.getContext(), LinearLayoutManager.HORIZONTAL, false));
             rvImages.setAdapter(imageAdapter);
         } else {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Màu nền bên trong -->
+    <solid android:color="@null" /> <!-- Thay bằng màu bạn muốn -->
+
+    <!-- Viền (stroke) -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorPrimary" /> <!-- Thay bằng màu viền bạn muốn -->
+
+    <!-- Kích thước bằng với kích thước ImageView -->
+    <size
+        android:width="40dp"
+        android:height="40dp" />
+</shape>

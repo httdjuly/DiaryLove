@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SelectWeatherActivity">
+
+
+    <TextView
+        android:id="@+id/txtAsk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Thời tiết có đẹp không nhỉ ?"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="327dp"
+        android:layout_height="447dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAsk"
+        app:layout_constraintVertical_bias="0.3">
+
+        <ImageView
+            android:id="@+id/imgRain"
+            android:layout_width="163dp"
+            android:layout_height="148dp"
+            app:layout_column="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.834"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="1"
+            app:srcCompat="@drawable/emoji_rain"
+            tools:layout_editor_absoluteY="312dp" />
+
+        <ImageView
+            android:id="@+id/imgCloud"
+            android:layout_width="163dp"
+            android:layout_height="148dp"
+            android:scaleType="fitCenter"
+            app:layout_column="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.177"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="0"
+            app:srcCompat="@drawable/emoji_cloud"
+            tools:layout_editor_absoluteY="312dp" />
+
+        <ImageView
+            android:id="@+id/imgSun"
+            android:layout_width="163dp"
+            android:layout_height="148dp"
+            android:scaleType="fitCenter"
+            app:layout_column="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.177"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="0"
+            app:srcCompat="@drawable/emoji_sun"
+            tools:layout_editor_absoluteY="164dp" />
+
+        <ImageView
+            android:id="@+id/imgWind"
+            android:layout_width="163dp"
+            android:layout_height="148dp"
+            app:layout_column="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.834"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="1"
+            app:srcCompat="@drawable/emoji_wind"
+            tools:layout_editor_absoluteY="164dp" />
+
+        <ImageView
+            android:id="@+id/imgRainbow"
+            android:layout_width="163dp"
+            android:layout_height="148dp"
+            app:layout_column="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.834"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="2"
+            app:srcCompat="@drawable/emoji_rainbow"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <ImageView
+            android:id="@+id/imgLight"
+            android:layout_width="163dp"
+            android:layout_height="148dp"
+            app:layout_column="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.177"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_row="2"
+            app:srcCompat="@drawable/emoji_light"
+            tools:layout_editor_absoluteY="460dp" />
+
+    </androidx.gridlayout.widget.GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

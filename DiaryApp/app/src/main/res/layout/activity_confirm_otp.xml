@@ -31,20 +31,11 @@
             android:textColor="#333333" />
 
         <EditText
-            android:id="@+id/etOTP"
+            android:id="@+id/etOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mã OTP"
             android:layout_marginBottom="16dp" />
-
-        <TextView
-            android:text="Bạn vẫn chưa nhận được mã OTP. Hãy chọn Gửi lai"
-            android:textStyle="italic"
-            android:textSize="14sp"
-            android:textColor="@color/colorOnSurface"
-            android:layout_marginBottom="12dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
 
         <Button
@@ -52,6 +43,13 @@
             android:layout_width="280dp"
             android:layout_height="48dp"
             android:text="Xác nhận"
+            android:textColor="@color/colorOnPrimary"
+            android:layout_marginBottom="16dp" />
+        <Button
+            android:id="@+id/btnResend"
+            android:layout_width="280dp"
+            android:layout_height="48dp"
+            android:text="Gửi lại"
             android:textColor="@color/colorOnPrimary"
             android:layout_marginBottom="16dp" />
 

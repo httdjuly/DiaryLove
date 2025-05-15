@@ -17,10 +17,15 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder> {
 
     private final List<Event> eventList;
 
-    public EventAdapter(List<Event> eventList) {
-        this.eventList = eventList;
-    }
+    private final OnEventClickListener listener;
 
+    public EventAdapter(List<Event> eventList, OnEventClickListener listener) {
+        this.eventList = eventList;
+        this.listener = listener;
+    }
+    public interface OnEventClickListener {
+        void onEventClick(Event event, int position);
+    }
     @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,7 +38,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder> {
     public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
         Event event = eventList.get(position);
         holder.tvTitle.setText(event.getTitle());
-
+        holder.itemView.setOnClickListener(v -> listener.onEventClick(event, position));
         holder.tvDays.setText(String.valueOf(event.getDay()));
     }
 

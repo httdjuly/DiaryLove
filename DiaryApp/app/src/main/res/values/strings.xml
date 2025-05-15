@@ -14,5 +14,7 @@
         <item>Lặp lại hàng năm</item>
         <item>Lặp lại hàng tháng</item>
     </string-array>
-
+    <string name="bottom_navigation_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

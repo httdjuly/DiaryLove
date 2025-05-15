@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class CalendarFragment extends Fragment implements CalendarAdapter.OnItem
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    private LinearLayout weekLayout;
+
     private boolean isCalendarVisible = false;  // Biến theo dõi trạng thái hiển thị Calendar
 
     @Nullable
@@ -37,7 +40,7 @@ public class CalendarFragment extends Fragment implements CalendarAdapter.OnItem
 
         calendarRecyclerView = view.findViewById(R.id.calendarRecyclerView);
         monthYearText = view.findViewById(R.id.monthYearTV);
-
+        weekLayout = view.findViewById(R.id.week);
         selectedDate = LocalDate.now();
         setMonthView();
 
@@ -50,6 +53,7 @@ public class CalendarFragment extends Fragment implements CalendarAdapter.OnItem
 
         // Ban đầu ẩn RecyclerView
         calendarRecyclerView.setVisibility(View.GONE);
+        weekLayout.setVisibility(View.GONE);
 
         return view;
     }
@@ -58,7 +62,7 @@ public class CalendarFragment extends Fragment implements CalendarAdapter.OnItem
         monthYearText.setText(monthYearFromDate(selectedDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
 
-        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
+        CalendarAdapter calendarAdapter = new CalendarAdapter(requireContext(), daysInMonth, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
@@ -115,10 +119,12 @@ public class CalendarFragment extends Fragment implements CalendarAdapter.OnItem
     // Phương thức chuyển đổi hiển thị Calendar
     private void toggleCalendarVisibility() {
         if (isCalendarVisible) {
-            calendarRecyclerView.setVisibility(View.GONE);  // Ẩn lịch
+            calendarRecyclerView.setVisibility(View.GONE);
+            weekLayout.setVisibility(View.GONE);
         } else {
-            calendarRecyclerView.setVisibility(View.VISIBLE);  // Hiển thị lịch
+            calendarRecyclerView.setVisibility(View.VISIBLE);
+            weekLayout.setVisibility(View.VISIBLE);
         }
-        isCalendarVisible = !isCalendarVisible;  // Cập nhật trạng thái hiển thị
+        isCalendarVisible = !isCalendarVisible;
     }
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@color/colorBackground"
+            android:src="@drawable/arrow_back"
+            android:textColor="@color/colorOnPrimary"
+            app:tint="@color/colorPrimaryVariant" />
+
+        <!-- Phần nhập email -->
+        <TextView
+            android:id="@+id/txtQuen"
+            android:layout_width="250dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="-10dp"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            android:text="Quên mật khẩu?"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"/>
+
+        <Button
+            android:id="@+id/btnSendOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gửi mã OTP"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Phần nhập OTP (ban đầu ẩn) -->
+        <LinearLayout
+            android:id="@+id/layoutOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="16dp">
+
+            <EditText
+                android:id="@+id/etOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mã OTP"
+                android:inputType="number"/>
+
+            <Button
+                android:id="@+id/btnVerifyOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Xác thực OTP"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Phần nhập mật khẩu mới (ban đầu ẩn) -->
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

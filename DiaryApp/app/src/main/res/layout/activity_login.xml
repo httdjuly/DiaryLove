@@ -46,6 +46,24 @@
             android:inputType="textPassword"
             android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:id="@+id/txtForget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Quên mật khẩu"
+            android:textColor="@color/colorOnBackground"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+        <CheckBox
+            android:id="@+id/checkboxRemember"
+            android:layout_width="wrap_content"
+            android:layout_gravity="start"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Ghi nhớ đăng nhập" />
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="280dp"
@@ -54,22 +72,14 @@
             android:text="Đăng nhập"
             android:textColor="#FFFFFF" />
 
-        <Button
-              android:id="@+id/btnGoogleLogin"
-              android:layout_width="280dp"
-              android:layout_height="48dp"
-              android:text="Đăng nhập với Google"
-              android:drawableStart="@drawable/logo_google"
-             android:textColor="#FFFFFF"
-             android:layout_marginBottom="16dp" />
-
-        <Button
-            android:id="@+id/btnFacebookLogin"
-            android:layout_width="280dp"
-            android:layout_height="48dp"
-            android:text="Đăng nhập với Facebook"
-            android:drawableStart="@drawable/logo_fb"
-            android:textColor="#FFFFFF" />
-
+        <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Bạn chưa có tài khoản ? Đăng ký ngay"
+        android:textColor="@color/colorOnBackground"
+        android:textSize="16sp"
+        android:textStyle="italic"/>
     </LinearLayout>
 </ScrollView>
