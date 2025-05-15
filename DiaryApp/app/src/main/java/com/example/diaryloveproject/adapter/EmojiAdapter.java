@@ -57,7 +57,7 @@ public class EmojiAdapter extends RecyclerView.Adapter<EmojiAdapter.EmojiViewHol
 
         public EmojiViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.rvEmojis);
+            imageView = itemView.findViewById(R.id.ivEmoji);
         }
     }
 }

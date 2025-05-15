@@ -9,6 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.diaryloveproject.activity.CreateNoteActivity;
+
 public class SelectWeatherActivity extends AppCompatActivity {
 
     @Override
@@ -28,7 +30,7 @@ public class SelectWeatherActivity extends AppCompatActivity {
 
     private void setupEmojiClick(int viewId, int weatherEmojiResId, int feelingEmojiResId) {
         findViewById(viewId).setOnClickListener(v -> {
-            Intent intent = new Intent(SelectWeatherActivity.this, CreateDiaryActivity.class);
+            Intent intent = new Intent(SelectWeatherActivity.this, CreateNoteActivity.class);
             intent.putExtra("feelingEmojiResId", feelingEmojiResId);
             intent.putExtra("weatherEmojiResId", weatherEmojiResId);
             startActivity(intent);
