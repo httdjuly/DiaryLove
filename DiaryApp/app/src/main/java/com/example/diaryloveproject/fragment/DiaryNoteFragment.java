@@ -54,6 +54,10 @@ public class DiaryNoteFragment extends Fragment {
             // Tiếp tục dùng userId gọi API lấy note
             fetchNotes(userId, view);
         }
+        // Hiển thị CalendarFragment ở đầu
+        getChildFragmentManager().beginTransaction()
+                .replace(R.id.calendar_container, new CalendarFragment())
+                .commit();
         ImageButton btnCreate = view.findViewById(R.id.btnCreate);
         btnCreate.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), SelectEmojiActivity.class);
@@ -62,7 +66,15 @@ public class DiaryNoteFragment extends Fragment {
 
         return view;
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("login_pref", Context.MODE_PRIVATE);
+        long userId = sharedPreferences.getLong("userId", -1);
+        if (userId != -1 && getView() != null) {
+            fetchNotes(userId, getView());
+        }
+    }
     private void fetchNotes(long userId, View view) {
         RecyclerView recyclerDiary = view.findViewById(R.id.recyclerDiary);
         recyclerDiary.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -92,6 +104,7 @@ public class DiaryNoteFragment extends Fragment {
                 Log.e("DiaryNoteFragment", "API call failed", t);
                 Toast.makeText(getContext(), "Lỗi kết nối: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 }

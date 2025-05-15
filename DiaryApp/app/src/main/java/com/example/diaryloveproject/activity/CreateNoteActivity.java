@@ -89,7 +89,6 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         // Khởi tạo DiaryNote với constructor 4 tham số
         DiaryNote note = new DiaryNote(userId, title, content, emojiUrls);
-
         // Gọi API lưu ghi chú
         RetrofitClient.getInstance().getAuthApi().createOrUpdateNote(note)
                 .enqueue(new Callback<Map<String, String>>() {
