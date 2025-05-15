@@ -61,6 +61,10 @@ public class LoginActivity extends AppCompatActivity {
             etPassword.setText(sharedPreferences.getString(KEY_PASSWORD, ""));
             checkboxRemember.setChecked(true);
         }
+        forgetText.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
+        });
 
         // Xử lý click "Đăng ký ngay"
         registerText.setOnClickListener(v -> {
