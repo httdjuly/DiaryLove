@@ -7,7 +7,7 @@
 
     <!-- Viền (stroke) -->
     <stroke
-        android:width="2dp"
+        android:width="5dp"
         android:color="@color/colorPrimary" /> <!-- Thay bằng màu viền bạn muốn -->
 
     <!-- Kích thước bằng với kích thước ImageView -->

@@ -64,4 +64,5 @@ public interface ApiService {
     @GET("/api/diary-notes/dates")
     Call<List<DiaryNote>> getNotesByUser(@Query("userId") Long userId);
 
+
 }

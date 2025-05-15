@@ -6,13 +6,13 @@
     <item
         android:id="@+id/nav_history"
         android:icon="@drawable/ic_calendar"
-        android:title="Lịch sử" />
+        android:title="Nhật ký" />
     <item
         android:id="@+id/nav_newsfeed"
         android:icon="@drawable/ic_chat"
-        android:title="Newsfeed" />
+        android:title="Bảng tin" />
     <item
         android:id="@+id/nav_daycounter"
         android:icon="@drawable/ic_clock"
-        android:title="Cá nhân" />
+        android:title="Kỷ niệm" />
 </menu>

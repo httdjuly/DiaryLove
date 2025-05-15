@@ -21,13 +21,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main); // Sử dụng layout bạn đã cung cấp
 
         // Ánh xạ views
-        fab = findViewById(R.id.newsfeed);
+
         bottomNavigation = findViewById(R.id.bottom_navigation);
 
-        // Xử lý sự kiện FloatingActionButton
-        fab.setOnClickListener(view -> {
-            Snackbar.make(view, "Chức năng đang phát triển", Snackbar.LENGTH_SHORT).show();
-        });
+
 
         // Xử lý sự kiện BottomNavigationView
         bottomNavigation.setOnItemSelectedListener(item -> {

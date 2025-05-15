@@ -4,9 +4,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String KEY_EMAIL = "email";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_REMEMBER = "remember";
+    private final boolean[] isPasswordVisible = {false};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -54,6 +57,26 @@ public class LoginActivity extends AppCompatActivity {
         registerText = findViewById(R.id.registerText);
         checkboxRemember = findViewById(R.id.checkboxRemember);
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        ImageView btnShowPass = findViewById(R.id.btnShowPass);
+
+
+        btnShowPass.setOnClickListener(v -> {
+            if (isPasswordVisible[0]) {
+                // Ẩn mật khẩu
+                etPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                btnShowPass.setImageResource(R.drawable.ic_hide);
+            } else {
+                // Hiện mật khẩu
+                etPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                btnShowPass.setImageResource(R.drawable.ic_show);
+            }
+
+            // Giữ con trỏ ở cuối dòng
+            etPassword.setSelection(etPassword.getText().length());
+
+            // Đảo trạng thái
+            isPasswordVisible[0] = !isPasswordVisible[0];
+        });
 
         // Load dữ liệu nếu đã chọn "Ghi nhớ"
         boolean isRemembered = sharedPreferences.getBoolean(KEY_REMEMBER, false);
