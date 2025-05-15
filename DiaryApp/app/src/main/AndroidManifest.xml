@@ -26,8 +26,12 @@
             android:name=".activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.CreateNoteActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,9 +50,6 @@
             android:exported="false" /> <!-- <activity -->
         <!-- android:name=".fragment.DayCounterFragment" -->
         <!-- android:exported="false" /> -->
-        <activity
-            android:name=".CreateDiaryActivity"
-            android:exported="false" />
         <activity
             android:name=".SelectEmojiActivity"
             android:exported="true">

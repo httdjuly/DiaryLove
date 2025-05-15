@@ -1,15 +1,19 @@
 package com.example.diaryloveproject.api;
 
+import com.example.diaryloveproject.model.DiaryNote;
+import com.example.diaryloveproject.model.Emoji;
 import com.example.diaryloveproject.model.Signup;
 import com.example.diaryloveproject.model.SignupRequest;
 import com.example.diaryloveproject.model.User;
 
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
@@ -47,4 +51,11 @@ public interface ApiService {
     Call<Map<String, Object>> resetPassword(
             @Field("email") String email,
             @Field("newPassword") String newPassword);
+
+    @GET("/api/emojis")
+    Call<List<Emoji>> getAllEmojis();
+
+    @POST("/api/diary-notes")
+    Call<String> createOrUpdateNote(@Body DiaryNote diaryNote);
+
 }

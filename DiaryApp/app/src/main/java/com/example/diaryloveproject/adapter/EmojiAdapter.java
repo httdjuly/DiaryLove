@@ -8,15 +8,29 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.diaryloveproject.R;
+import com.example.diaryloveproject.model.Emoji;
 
 import java.util.List;
 
 public class EmojiAdapter extends RecyclerView.Adapter<EmojiAdapter.EmojiViewHolder> {
-    private final List<Integer> emojiResIds;
 
-    public EmojiAdapter(List<Integer> emojiResIds) {
-        this.emojiResIds = emojiResIds;
+    public interface OnEmojiClickListener {
+        void onEmojiClick(String emojiUrl);
+    }
+
+    private List<Emoji> emojis;
+    private final OnEmojiClickListener listener;
+
+    public EmojiAdapter(List<Emoji> emojis, OnEmojiClickListener listener) {
+        this.emojis = emojis;
+        this.listener = listener;
+    }
+
+    public void setEmojis(List<Emoji> emojis) {
+        this.emojis = emojis;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -28,23 +42,22 @@ public class EmojiAdapter extends RecyclerView.Adapter<EmojiAdapter.EmojiViewHol
 
     @Override
     public void onBindViewHolder(@NonNull EmojiViewHolder holder, int position) {
-        int resId = emojiResIds.get(position);
-        holder.ivEmoji.setImageResource(resId); // dùng resource trực tiếp
+        Emoji emoji = emojis.get(position);
+        Glide.with(holder.itemView.getContext()).load(emoji.getImageUrl()).into(holder.imageView);
+        holder.imageView.setOnClickListener(v -> listener.onEmojiClick(emoji.getImageUrl()));
     }
 
     @Override
     public int getItemCount() {
-        return emojiResIds.size();
+        return emojis != null ? emojis.size() : 0;
     }
 
     static class EmojiViewHolder extends RecyclerView.ViewHolder {
-        ImageView ivEmoji;
+        ImageView imageView;
 
         public EmojiViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivEmoji = itemView.findViewById(R.id.ivEmoji);
+            imageView = itemView.findViewById(R.id.rvEmojis);
         }
     }
 }
-
-

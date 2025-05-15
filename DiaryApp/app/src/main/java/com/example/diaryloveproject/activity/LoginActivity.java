@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private ScrollView mainLayout;
     private CheckBox checkboxRemember;
     private SharedPreferences sharedPreferences;
+    private static final String KEY_USER_ID = "userId";
     private static final String PREF_NAME = "login_pref";
     private static final String KEY_EMAIL = "email";
     private static final String KEY_PASSWORD = "password";
@@ -111,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             } else {
                                 editor.clear();
                             }
+                            editor.putLong(KEY_USER_ID, user.getId());
                             editor.apply();
 
                             // Chuyển sang MainActivity
