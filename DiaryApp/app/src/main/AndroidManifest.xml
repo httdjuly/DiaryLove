@@ -20,7 +20,10 @@
             android:name=".ForgetOtp"
             android:exported="false" />
         <activity
-            android:name=".activity.ForgetAcitivity"
+            android:name=".activity.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".activity.LoginActivity"
@@ -57,6 +60,9 @@
         </activity>
         <activity
             android:name=".activity.OtpVerifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OtpVerifyResetActivity"
             android:exported="false" />
         <activity
             android:name=".activity.RegisterActivity"
