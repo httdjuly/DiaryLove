@@ -81,12 +81,14 @@
         android:id="@+id/btnAddFr"
         android:layout_width="280dp"
         android:layout_height="48dp"
+        android:layout_gravity="center"
         android:text="Gửi lời mời"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:textColor="@color/colorOnPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail"
-        app:layout_constraintVertical_bias="0.274"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintVertical_bias="0.274" />
 </androidx.constraintlayout.widget.ConstraintLayout>

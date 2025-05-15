@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="480px"
     android:layout_marginBottom="12dp"
+
     android:background="@drawable/calendartest"
     android:clipToPadding="false"
     android:gravity="center_horizontal"
@@ -18,13 +19,14 @@
     <TextView
         android:id="@+id/txtDay"
         android:layout_width="84dp"
+        android:gravity="center"
         android:layout_height="58dp"
         android:layout_weight="1"
         android:fontFamily="@font/baloo_extrabold"
-        android:text="999"
+        android:text="124"
         android:textAlignment="gravity"
         android:textColor="@color/colorPrimaryVariant"
-        android:textSize="48sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -36,8 +38,8 @@
 
     <TextView
         android:id="@+id/txtDay2"
-        android:layout_width="118dp"
-        android:layout_height="31dp"
+        android:layout_width="122dp"
+        android:layout_height="41dp"
         android:layout_weight="1"
 
         android:fontFamily="@font/baloo_extrabold"
@@ -50,5 +52,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDay"
-        app:layout_constraintVertical_bias="0.232" />
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

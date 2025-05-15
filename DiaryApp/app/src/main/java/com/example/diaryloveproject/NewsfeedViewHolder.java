@@ -35,7 +35,7 @@ public class NewsfeedViewHolder extends RecyclerView.ViewHolder {
         Glide.with(itemView.getContext())
                 .load(diary.getAuthorAvatar())
                 .circleCrop()
-                .placeholder(R.drawable.ic_load)
+                .placeholder(R.drawable.bear)
                 .into(ivAvatar);
 
         // Bind diary content

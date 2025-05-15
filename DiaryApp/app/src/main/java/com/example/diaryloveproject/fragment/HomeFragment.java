@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.diaryloveproject.ConnectActivity;
 import com.example.diaryloveproject.ProfileActivity;
 import com.example.diaryloveproject.R;
 import com.example.diaryloveproject.api.ApiService;
@@ -23,6 +24,7 @@ import androidx.fragment.app.Fragment;
 
 
 public class HomeFragment extends Fragment {
+    ImageView imgMyAvt, imgPartner;
 
     public HomeFragment() {
         // Constructor rỗng bắt buộc
@@ -41,13 +43,21 @@ public class HomeFragment extends Fragment {
 
         // Tìm ImageView avatar
         ImageView imgMyAvt = view.findViewById(R.id.imgMyAvt);
+        ImageView imgPartner = view.findViewById(R.id.imgPartnerAvt);
 
+        imgPartner.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), ConnectActivity.class);
+            startActivity(intent);
+        });
         imgMyAvt.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), ProfileActivity.class);
             startActivity(intent);
             });
 
-        return view;}}
+        return view;
+    }
+
+}
 
 //
 ////        ImageView imgPartnerAvt = view.findViewById(R.id.imgPartnerAvt);
