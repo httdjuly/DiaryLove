@@ -14,7 +14,6 @@ import retrofit2.http.POST;
 
 public interface ApiService {
     @FormUrlEncoded
-
     @POST("/api/auth/signin")
     Call<User> login(
             @Field("email") String email,
