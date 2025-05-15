@@ -21,6 +21,7 @@ import com.example.diaryloveproject.model.User;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,7 +38,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_diary);
+        setContentView(R.layout.activity_create_note);
 
         // Lấy userId từ SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("login_pref", MODE_PRIVATE);
@@ -89,15 +90,14 @@ public class CreateNoteActivity extends AppCompatActivity {
         // Khởi tạo DiaryNote với constructor 4 tham số
         DiaryNote note = new DiaryNote(userId, title, content, emojiUrls);
 
-        note.setTimestamp(LocalDateTime.now());
-
         // Gọi API lưu ghi chú
         RetrofitClient.getInstance().getAuthApi().createOrUpdateNote(note)
-                .enqueue(new Callback<String>() {
+                .enqueue(new Callback<Map<String, String>>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(CreateNoteActivity.this, "Lưu thành công!", Toast.LENGTH_SHORT).show();
+                    public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
+                        if (response.isSuccessful() && response.body() != null) {
+                            String msg = response.body().get("message");
+                            Toast.makeText(CreateNoteActivity.this, msg != null ? msg : "Lưu thành công!", Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
                             Toast.makeText(CreateNoteActivity.this, "Lỗi khi lưu! Vui lòng thử lại.", Toast.LENGTH_SHORT).show();
@@ -105,7 +105,7 @@ public class CreateNoteActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
+                    public void onFailure(Call<Map<String, String>> call, Throwable t) {
                         Toast.makeText(CreateNoteActivity.this, "Lỗi kết nối: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

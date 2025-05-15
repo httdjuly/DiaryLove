@@ -60,6 +60,8 @@ public interface ApiService {
     Call<List<Emoji>> getEmojisByCategory(@Query("category") String category);
 
     @POST("/api/diary-notes")
-    Call<String> createOrUpdateNote(@Body DiaryNote diaryNote);
+    Call<Map<String, String>> createOrUpdateNote(@Body DiaryNote diaryNote);
+    @GET("/api/diary-notes/dates")
+    Call<List<DiaryNote>> getNotesByUser(@Query("userId") Long userId);
 
 }

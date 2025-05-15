@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             ApiService apiService = RetrofitClient.getInstance().getAuthApi();
             Call<User> call = apiService.login(email, password);
 
-            call.enqueue(new Callback<User>() {
+            call.enqueue(new Callback<>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
                     if (response.isSuccessful()) {
