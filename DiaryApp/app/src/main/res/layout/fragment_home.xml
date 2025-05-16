@@ -41,15 +41,12 @@
             android:scaleType="centerInside"
             android:src="@drawable/ic_heart" />
 
-        <ImageView
-            android:id="@+id/imgMyAvt"
+        <de.hdodenhof.circleimageview.CircleImageView            android:id="@+id/imgMyAvt"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="15dp"
-            android:background="@drawable/bg_avatar"
-            android:clipToOutline="true"
-            android:scaleType="centerInside"
             android:src="@drawable/ic_home"
+            android:background="@drawable/bg_avatar"
             app:layout_constraintBottom_toTopOf="@+id/imv_main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.573"

@@ -66,6 +66,16 @@ public class CalendarFragment extends Fragment implements CalendarAdapter.OnItem
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
+        // Lưu tháng và năm đang hiển thị vào SharedPreferences
+        int selectedMonth = selectedDate.getMonthValue() - 1; // Calendar.MONTH bắt đầu từ 0
+        int selectedYear = selectedDate.getYear();
+
+        requireContext().getSharedPreferences("calendar_state", getContext().MODE_PRIVATE)
+                .edit()
+                .putInt("selected_month", selectedMonth)
+                .putInt("selected_year", selectedYear)
+                .apply();
+
     }
 
     private ArrayList<String> daysInMonthArray(LocalDate date) {

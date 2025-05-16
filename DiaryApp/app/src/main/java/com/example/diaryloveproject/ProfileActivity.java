@@ -15,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
 import com.example.diaryloveproject.activity.LoginActivity;
 import com.example.diaryloveproject.adapter.ImageAdapter;
 import com.example.diaryloveproject.fragment.HomeFragment;
@@ -28,6 +29,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     private ImageAdapter imageAdapter;
     private ImageView imgAvatar;
+    ImageButton btnUpload;
+    private Uri updatedImageUri;
 
     private List<String> imageUrls = new ArrayList<>();
 
@@ -45,9 +48,15 @@ public class ProfileActivity extends AppCompatActivity {
         imgAvatar = findViewById(R.id.imgAvatar);
 
         imageAdapter = new ImageAdapter(imageUrls, this); // cần viết Adapter
+        String uriStr = getIntent().getStringExtra("imageUri");
+        if (uriStr != null) {
+            updatedImageUri = Uri.parse(uriStr);
+            imgAvatar.setImageURI(updatedImageUri);
+        }
 
-        ImageButton btnUpload = findViewById(R.id.btnAddImg) ;
+        btnUpload = findViewById(R.id.btnAddImg) ;
         btnUpload.setOnClickListener(v -> openImagePicker());
+
         Button btnLogout = findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,22 +91,31 @@ public class ProfileActivity extends AppCompatActivity {
             Uri selectedImageUri = null;
 
             if (data.getClipData() != null && data.getClipData().getItemCount() > 0) {
-                selectedImageUri = data.getClipData().getItemAt(0).getUri(); // lấy ảnh đầu tiên
-                int count = data.getClipData().getItemCount();
-                for (int i = 0; i < count; i++) {
+                // Lấy ảnh đầu tiên trong danh sách
+                selectedImageUri = data.getClipData().getItemAt(0).getUri();
+
+                for (int i = 0; i < data.getClipData().getItemCount(); i++) {
                     Uri imageUri = data.getClipData().getItemAt(i).getUri();
                     imageUrls.add(imageUri.toString());
                 }
+
             } else if (data.getData() != null) {
                 selectedImageUri = data.getData();
                 imageUrls.add(selectedImageUri.toString());
             }
 
             if (selectedImageUri != null) {
-                // Đổi ảnh imgAvatar thành ảnh đã chọn
-                imgAvatar.setImageURI(selectedImageUri);
-                // Hoặc dùng Glide:
-                // Glide.with(this).load(selectedImageUri).into(imgAvatar);
+                // Load ảnh đã chọn vào imgAvatar
+                Glide.with(this)
+                        .load(selectedImageUri)
+                        .into(imgAvatar);
+
+                updatedImageUri = selectedImageUri;
+
+                // Nếu bạn cần truyền ngược lại
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("updatedImageUri", selectedImageUri.toString());
+                setResult(RESULT_OK, resultIntent);
             }
 
             imageAdapter.notifyDataSetChanged();

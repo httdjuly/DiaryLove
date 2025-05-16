@@ -38,14 +38,14 @@ public class DayCounterFragment extends Fragment {
         recyclerEvent.setLayoutManager(new LinearLayoutManager(getContext()));
 
         eventList = new ArrayList<>();
-        eventList.add(new Event("Thi cuối kỳ", 300,"none"));
-        eventList.add(new Event("Thi cuối kỳ", 300,"yearly"));
-        eventList.add(new Event("Sinh nhật của em", 100, "yearly"));
-        eventList.add(new Event("Thi cuối kỳ",129,"yearly"));
-        eventList.add(new Event("Sinh nhật của anh", 300,"yearly"));
-        eventList.add(new Event("Thi giữa kỳ",200,"yearly"));
-        eventList.add(new Event("Sinh nhật của em", 100,"yearly"));
-        eventList.add(new Event("Thi cuối kỳ",129,"yearly"));
+        eventList.add(new Event("Ngày Kỷ Niệm ", 52, "yearly"));
+        eventList.add(new Event("Chuyến đi Nha Trang", 65, "none"));
+        eventList.add(new Event("Sinh nhật Hbao", 70, "yearly"));
+        eventList.add(new Event("Du lịch Đà Lạt", 95, "none"));
+        eventList.add(new Event("Sinh nhật em", 120, "yearly"));
+        eventList.add(new Event("Chuyến đi Phú Quốc", 130, "none"));
+
+
 
         eventAdapter = new EventAdapter(eventList, (event, position) -> {
             showEditDialog(event, position);
